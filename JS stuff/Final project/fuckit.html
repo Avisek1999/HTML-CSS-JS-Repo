@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+    <title>Person's information</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container"><br>
+        <h1 class="text-success text-center">Person's Details Form</h1>
+        <div class="col-lg-8 m-auto dblock">
+            <form method="#" onsubmit="validation()" class="bg-light">
+                <div class="form-group">
+                    <label>First Name: </label>
+                    <input type="text" name="Fname" class="form-control" id="Fname" autocomplete="off">
+                    <span id="fnameErr" class="text-danger font-weight-bold"></span>
+                </div>
+                <div class="form-group">
+                    <label>Last Name: </label>
+                    <input type="text" name="Lname" class="form-control" id="Lname" autocomplete="off">
+                    <span id="lnameErr" class="text-danger font-weight-bold"></span>
+                </div>
+                <div class="form-group">
+                    <label>Age: </label>
+                    <input type="text" name="age" class="form-control" id="age" autocomplete="off">
+                    <span id="ageErr" class="text-danger font-weight-bold"></span>
+                </div>
+                <div class="form-group">
+                    <label>Height: (in cm) </label>
+                    <input type="text" name="height" class="form-control" id="height" autocomplete="off">
+                    <span id="heightErr" class="text-danger font-weight-bold"></span>
+                </div>
+                <div class="form-group">
+                    <label>Contact number: </label>
+                    <input type="text" name="contact" class="form-control" id="contact" autocomplete="off">
+                    <span id="contactErr" class="text-danger font-weight-bold"></span>
+                </div>
+				<div class="form-group">
+                    <label>Email Address: </label>
+                    <input type="email" name="email" class="form-control" id="email" autocomplete="off">
+                    <span id="emailErr" class="text-danger font-weight-bold"></span>
+                </div>
+                <input type="submit" name="submit" value="submit" class="btn btn-success">
+            </form>    
+        </div>
+     </div> 
+    
+    <script type="text/javascript">
+        
+        function validation() {
+            var FirstName = document.getElementById("Fname").value;
+            
+            var userCheck = /^[A-Za-z]{4,20}$/;
+            
+            if(userCheck.test(FirstName)) {
+                document.getElementById('fnameErr').innerHTML = "";
+            } else {
+                document.getElementById('fnameErr').innerHTML = "First name is Invalid";
+            return false;
+            }
+        }
+        
+    </script>
+</body>
+</html>

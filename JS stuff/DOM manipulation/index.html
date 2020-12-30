@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+    <title>USER INPUT</title>
+    <script type="text/javascript">
+        function func1() {
+            var strFirstName=document.getElementById("txtFirstName").value;
+            var strLastName=document.getElementById("txtLastName").value;
+            var strAge=document.getElementById("txtAge").value.toString();
+            var strHeight=document.getElementById("txtHeight").value.toString();
+            var strGender1=document.getElementById("btnGender1").value;
+            var strGender2=document.getElementById("btnGender2").value;
+            var strAddress=document.getElementById("txtAddress").value;
+            var strContact=document.getElementById("txtContact").value;
+            document.getElementById("FirstName").innerHTML = "First Name: " + strFirstName;
+            document.getElementById("LastName").innerHTML = "Last Name: " + strLastName;
+            document.getElementById("Age").innerHTML = "Age: " + strAge;
+            document.getElementById("Height").innerHTML = "Height: " + strHeight;
+            if(document.getElementById("btnGender1").checked == true)
+                document.getElementById("Gender").innerHTML = "Gender: " +strGender1;
+            else
+                document.getElementById("Gender").innerHTML = "Gender: " +strGender2;
+            document.getElementById("Address").innerHTML = "Address: " + strAddress;
+            document.getElementById("Contact").innerHTML = "Contact Number: " + strContact;
+        }
+    </script>
+</head>
+<body>
+    <div id="myForm" style="position: absolute;">
+        <form>
+            <input id="txtFirstName" placeholder="First Name" pattern="[A-Za-z]{1,10}" maxlength="10" required><br><br>
+            <input id="txtLastName" placeholder="Last Name" pattern="[A-Za-z]{1,10}" maxlength="10" required><br><br>
+            <input id="txtAge" placeholder="Age" type="number" min="1" max="99" required><br><br>
+            <input id="txtHeight" placeholder="Height(cm)" type="number" min="100" max="200" required><br><br><p>Gender:</p>
+            <input type="radio" id="btnGender1" name="Gender" value="Male" required>Male<br>
+            <input type="radio" id="btnGender2" name="Gender" value="Female">Female<br><br>
+            <input id="txtAddress" placeholder="Address" pattern="[A-Za-z]{1,10}" maxlength="10" required><br><br>
+            <input id="txtContact" placeholder="Contact Number" pattern="[0-9]{10}" type="tel" required><br><br>
+            <button onclick="func1()" id="btnClickMe">Click Me</button><br><br>
+        </form>
+    </div>
+    <div id="myData" style="position: relative; left: 20%;">
+        <p id="FirstName"></p> <p id="LastName"></p> <p id="Age"></p>
+        <p id="Height"></p> <p id="Gender"></p> <p id="Address"></p> <p id="Contact"></p>
+    </div>
+</body>
+</html>
